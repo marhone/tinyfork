@@ -1,0 +1,41 @@
+parameters:
+  database-orm: 'doctrine'
+  view-engine: 'twig'
+  redis-stamp: 'tcp://127.0.0.1:6379'
+
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  App\:
+    resource: '../app/*'
+    exclude: '../app/{Entities}'
+
+
+  App\Middlewares\:
+    resource: '../app/Middlewares'
+    public: true
+
+  App\Middlewares\Cache:
+    arguments: ['@cache.redis-pool']
+    public: true
+
+  App\Middlewares\PrivilegeChecker:
+    arguments:
+      - ['@App\Privileges\AdminPrivilege', '@App\Privileges\ImagePrivilege']
+    public: true
+
+  App\Providers\:
+    resource: '../app/Providers'
+    public: true
+
+  # -----------------------------------------------------------------------------------------------
+
+  redis.connection:
+    class: Predis\Client
+    arguments: ['%redis-stamp%']
+
+  cache.redis-pool:
+    class: Cache\Adapter\Predis\PredisCachePool
+    arguments: ['@redis.connection']

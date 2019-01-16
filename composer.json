@@ -1,0 +1,21 @@
+{
+    "name": "marhone/tinyfork",
+    "description": "wubba lubba dub dub...",
+    "authors": [
+        {
+            "name": "marhone",
+            "email": "no7nic3@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "cache/predis-adapter": "^1.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2"
+    }
+}

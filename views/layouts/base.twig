@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+        <link href="css/style.css">
+        <title>{% block title %}{% endblock %} - My Web Page.</title>
+    {% endblock %}
+</head>
+<body>
+<div id="content">{% block content %}{% endblock %}</div>
+<div id="footer">
+    {% block footer %}
+        &copy; Copyleft 2019 by <a href="http://github.com/marhone">marhone</a>
+    {% endblock %}
+</div>
+</body>
+</html>
