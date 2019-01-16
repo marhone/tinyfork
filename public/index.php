@@ -15,6 +15,6 @@ require __DIR__ . '/../vendor/autoload.php';
 // 从全局变量中创建 Request
 $request = Request::createFromGlobals();
 //$response = (HttpKernel::newInstance('prod', false))->handle($request);
-$response = (HttpKernel::newInstance('dev', true))->handle($request);
+$response = (HttpKernel::newInstance(dirname(__DIR__), 'dev', true))->handle($request);
 
 $response->send();
