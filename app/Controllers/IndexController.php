@@ -15,6 +15,6 @@ class IndexController
 {
     public function index(Request $request)
     {
-        return view('index\index');
+        return view('index\index', ['message' => 'wabba lubba dub dub']);
     }
 }
