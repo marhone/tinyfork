@@ -1,6 +1,6 @@
-App\Entities\Product:
+App\Entities\User:
   type: entity
-  table: products
+  table: users
 
   id:
     id:
@@ -10,4 +10,8 @@ App\Entities\Product:
 
   fields:
     name:
+      type: string
+    email:
+      type: string
+    password:
       type: string

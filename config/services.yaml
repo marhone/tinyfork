@@ -29,11 +29,6 @@ services:
     arguments: ['@cache.redis-pool']
     public: true
 
-  App\Middlewares\PrivilegeChecker:
-    arguments:
-      - ['@App\Privileges\AdminPrivilege', '@App\Privileges\ImagePrivilege']
-    public: true
-
   App\Providers\:
     resource: '../app/Providers'
     public: true

@@ -10,7 +10,6 @@ namespace App\Controllers;
 
 
 use Tinyfork\Http\Request;
-use Tinyfork\Http\Response;
 
 class IndexController
 {
