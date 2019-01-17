@@ -1,6 +1,15 @@
 parameters:
   database-orm: 'doctrine'
   view-engine: 'twig'
+
+  # 自定义的服务提供者
+  service-provider: 'App\Providers\ServiceProviderRegister'
+
+  # 作用于全部路由的中间件
+  middlewares:
+    - 'App\Middlewares\ExceptionHandler'
+    - 'App\Middlewares\Router'
+
   redis-stamp: 'tcp://127.0.0.1:6379'
 
 services:
@@ -11,7 +20,6 @@ services:
   App\:
     resource: '../app/*'
     exclude: '../app/{Entities}'
-
 
   App\Middlewares\:
     resource: '../app/Middlewares'

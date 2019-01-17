@@ -9,10 +9,10 @@
 namespace App\Middlewares;
 
 
+use App\Privileges\PrivilegeInterface;
 use Tinyfork\Http\Request;
 use Tinyfork\Http\Response;
 use Tinyfork\Middleware\MiddlewareInterface;
-use Tinyfork\Privilege\PrivilegeInterface;
 
 class PrivilegeChecker implements MiddlewareInterface
 {

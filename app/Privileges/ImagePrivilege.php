@@ -10,7 +10,6 @@ namespace App\Privileges;
 
 
 use Tinyfork\Http\Request;
-use Tinyfork\Privilege\PrivilegeInterface;
 
 class ImagePrivilege implements PrivilegeInterface
 {
